@@ -1,13 +1,13 @@
 /*global module:false*/
 module.exports = function(grunt) {
-    
+
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  // grunt.loadNpmTasks('grunt-contrib-watch');
+  // grunt.loadNpmTasks('grunt-contrib-qunit');
+  // grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Project configuration.
   grunt.initConfig({
@@ -48,33 +48,33 @@ module.exports = function(grunt) {
         }
       }
     },
-    qunit: {
-      local: ['test/notravis/**/*.html'],
-      travis: ['test/issues/**/*.html', 'test/jqBootstrapValidation.html']
-    },
-    watch: {
-      files: '<%= jshint.files %>',
-      tasks: ['jshint', 'qunit']
-    },
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        boss: true,
-        eqnull: true,
-        browser: true,
-        globals: {
-          jQuery: true
-        },
-      },
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
-    },
+    // qunit: {
+    //   local: ['test/notravis/**/*.html'],
+    //   travis: ['test/issues/**/*.html', 'test/jqBootstrapValidation.html']
+    // },
+    // watch: {
+    //   files: '<%= jshint.files %>',
+    //   tasks: ['jshint', 'qunit']
+    // },
+    // jshint: {
+    //   options: {
+    //     curly: true,
+    //     eqeqeq: true,
+    //     immed: true,
+    //     latedef: true,
+    //     newcap: true,
+    //     noarg: true,
+    //     sub: true,
+    //     undef: true,
+    //     boss: true,
+    //     eqnull: true,
+    //     browser: true,
+    //     globals: {
+    //       jQuery: true
+    //     },
+    //   },
+    //   files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
+    // },
     compress: {
       dist: {
         options: {
@@ -91,10 +91,10 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify', 'compress']);
-  
+  grunt.registerTask('default', ['clean', 'concat', 'uglify', 'compress']);
+
   // Travis CI task.
-  grunt.registerTask('travis', ['jshint', 'qunit:travis']);
+  // grunt.registerTask('travis', ['jshint', 'qunit:travis']);
 
   grunt.registerTask('component', 'Buld component.json', function () {
     var opts = grunt.config('meta.component');

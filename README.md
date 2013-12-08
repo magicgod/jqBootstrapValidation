@@ -1,11 +1,21 @@
-jqBootstapValidation
+jqBootstapValidation for bootstrap3
 ====================
 
-A JQuery validation framework for bootstrap forms. 
+A JQuery validation framework for bootstrap3 forms.
 
 Displays validation errors in `help-block` elements as users type.
 
-[![Build Status](https://travis-ci.org/ReactiveRaven/jqBootstrapValidation.png?branch=master)](https://travis-ci.org/ReactiveRaven/jqBootstrapValidation)
+NOTICE
+------
+I can't install qunit , because something is blocked by GFW.
+
+so I removed grunt-contrib-watch, grunt-contrib-qunit and grunt-contrib-jshint, sorry.
+
+ChangeSet
+--------
+* changed "error" and "warning" to "has-error" and "has-warning" at all.
+* removed "error" from form element.
+
 
 How to use?
 -----------
@@ -16,6 +26,3 @@ Developers
 Want to contribute? Great! Check out [CONTRIBUTING.md]
 
 
-
-
-[![endorse](http://api.coderwall.com/reactiveraven/endorsecount.png)](http://coderwall.com/reactiveraven)
